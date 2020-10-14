@@ -8,13 +8,21 @@ RANDGAN is a generative adversarial model implemented in Python for classificati
 
 * Your directory structure should be as follows:
 ├───data/
+
 │   └───covid_train.npy/
+
 │   └───normal_train.npy/
+
 │   └───pneumonia_train.npy
+
 └───weights/
+
 └───result/
+
 └───RANDGAN_model.py/
+
 └───main.py/
+
 
 ## Requirements
 
