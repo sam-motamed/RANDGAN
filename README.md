@@ -7,21 +7,15 @@ RANDGAN is a generative adversarial model implemented in Python for classificati
 	https://github.com/IMICSLab/Covidx-IMICS-Lung-Segmentation
 
 * Your directory structure should be as follows:
-├───data/
-
-│   └───covid_train.npy/
-
-│   └───normal_train.npy/
-
-│   └───pneumonia_train.npy
-
-└───weights/
-
-└───result/
-
-└───RANDGAN_model.py/
-
-└───main.py/
+.
+├── ...
+├── docs                    # Documentation files (alternatively `doc`)
+│   ├── TOC.md              # Table of contents
+│   ├── faq.md              # Frequently asked questions
+│   ├── misc.md             # Miscellaneous information
+│   ├── usage.md            # Getting started guide
+│   └── ...                 # etc.
+└── ...
 
 
 ## Requirements
