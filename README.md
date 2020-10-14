@@ -5,7 +5,7 @@ RANDGAN is a generative adversarial model implemented in Python for classificati
 
 * To generate the segmented COVIDx dataset, please refer to 
 	https://github.com/IMICSLab/Covidx-IMICS-Lung-Segmentation
-
+```
 * Your directory structure should be as follows:
 .
 ├── ...
@@ -16,7 +16,7 @@ RANDGAN is a generative adversarial model implemented in Python for classificati
 │   ├── usage.md            # Getting started guide
 │   └── ...                 # etc.
 └── ...
-
+```
 
 ## Requirements
 
