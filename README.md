@@ -2,6 +2,10 @@
 
 RANDGAN is a generative adversarial model implemented in Python for classification of COVID-19 Positive and COVID-19 Negative Chest X-rays.
 
+```To generate the segmented COVIDx dataset, please refer to 
+	https://github.com/IMICSLab/Covidx-IMICS-Lung-Segmentation
+```
+
 ## Requirements
 
 ```bash
