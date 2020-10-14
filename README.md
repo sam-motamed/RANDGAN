@@ -16,7 +16,7 @@ Please cite our paper  https://arxiv.org/abs/2010.06418
 ├── weight
 ├── modified   #direcvtory where anomaly scores are saved in
 ├── data                    
-│   ├── COVID_train.npy              
+│   ├── COVID_test.npy              
 │   ├── Normal_train.npy              
 │   ├── Pneumonia_train.npy             
 │   └── ...                #train and etst numpy arrays
