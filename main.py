@@ -20,22 +20,18 @@ from skimage.util.shape import view_as_blocks
 parser = argparse.ArgumentParser()
 parser.add_argument('--img_idx', type=int, default=14)
 parser.add_argument('--label_idx', type=int, default=7)
-parser.add_argument('--mode', type=str, default='tfrain', help='train, test')
+parser.add_argument('--mode', type=str, default='train', help='train, test')
 args = parser.parse_args()
 
 
 ### 0. prepare data
-X_train = np.load('./data/seg_pneumonia_train.npy')
+X_train = np.load('./data/Pneumonia_train.npy')
 #np.save('pneu_610', X_train[:610])
 X_train = X_train.reshape(-1, 128, 128, 1)
 X_train = X_train.astype(np.float32)
 min_scal = X_train.min()
 max_scal = X_train.max()
 X_train = X_train.astype(np.float32) 
-
-print(X_train.shape)
-min_scal = X_train.min()
-max_scal = X_train.max()
 print(min_scal, max_scal)
 
 if args.mode == 'train':
@@ -65,9 +61,6 @@ def anomaly_detection(test_img, g=None, d=None):
     
 test_img = np.load('./data/seg_pneumonia_test.npy').reshape(-1, 128, 128, 1)
 print("test size", np.shape(test_img))
-#test_img = test_img / 127.5 - 1
-
-print(test_img.shape)
 
 print("test min and max", np.min(test_img), np.max(test_img))
 normal = []
@@ -77,15 +70,11 @@ worksheet = wb.add_sheet('Sheet 1')
 for i in range(test_img.shape[0]):
     test_im = test_img[i]
     score, qurey, pred, diff = anomaly_detection(test_im)
-    cv2.imwrite('./pneu/'+ str(i) + 'qurey_test'+ '.png', test_im * 127.5 + 127.5)
-    cv2.imwrite('./pneu/' + str(i) + 'pred_test' +  '.png', pred)
-    cv2.imwrite('./pneu/'+ str(i) + 'diff_test' +  '.png', diff)
-    print('image: ', str(i), score)
     normal.append(score)
     worksheet.write(i + 1, 1, score)
     worksheet.write(i + 1, 2, np.count_nonzero(qurey != 0))
     worksheet.write(i + 1, 3, score / np.sqrt(np.count_nonzero(qurey != 0)))
-wb.save('./modified/pneumonia.xls')
+wb.save('./modified/pneumonia_anomalyscores.xls')
 ### 4. tsne feature view
 normal = np.array(normal)
 print("MEAN", np.mean(normal))
