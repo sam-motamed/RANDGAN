@@ -22,10 +22,14 @@ RANDGAN is a generative adversarial model implemented in Python for classificati
 ```
 
 # Train the model
+
 * By running main.py (setting line 23 to train), model starts training
-** make sure you change the file / directory paths to your local environment **
+
+* make sure you change the file / directory paths to your local environment 
 # Test the model
+
 * By setting main.py to test mode (line 23), you can load in test images and calculate anonmaly scores for each image (saved to modified folder as CSV file.
+
 ## Requirements
 
 ```bash
