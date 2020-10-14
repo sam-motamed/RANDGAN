@@ -8,13 +8,16 @@ RANDGAN is a generative adversarial model implemented in Python for classificati
 ```
 * Your directory structure should be as follows:
 .
-├── ...
-├── docs                    # Documentation files (alternatively `doc`)
-│   ├── TOC.md              # Table of contents
-│   ├── faq.md              # Frequently asked questions
-│   ├── misc.md             # Miscellaneous information
-│   ├── usage.md            # Getting started guide
-│   └── ...                 # etc.
+├── RANDGAN_model.py
+├── main.py
+├── result     #generated images at each iteration are saved here
+├── weight
+├── modified   #direcvtory where anomaly scores are saved in
+├── data                    
+│   ├── COVID_train.npy              
+│   ├── Normal_train.npy              
+│   ├── Pneumonia_train.npy             
+│   └── ...                #train and etst numpy arrays
 └── ...
 ```
 
